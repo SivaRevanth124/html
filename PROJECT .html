@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#logo {
+    font-size: 2em;
+    color: white;
+    text-shadow:0px 0px 10px red,
+                0px 0px 20px red,
+                0px 0px 40px red,
+                0px 0px 80px red;
+
+    user-select: none;
+    font-weight: 600;
+}
+
+.menu a {
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 20px;
+    letter-spacing: 1px;
+    padding: 6px 15px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.menu a:hover,
+a.active {
+    color: #333;
+    background: #fff;
+}
+
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1826&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#heading {
+    position: absolute;
+    top: 20%;
+    font-size: 4em;
+    
+    color: white;
+    text-shadow:0px 0px 10px red,
+                0px 0px 20px red,
+                0px 0px 40px red,
+                0px 0px 80px red;
+}
+
+.parallax img {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+
+.parallax img#moon {
+    width: 300px;
+    top: 40%;
+    right: 20%;
+}
+
+.parallax img#mountain {
+    position: fixed;
+    bottom: 0;
+}
+
+.parallax img#grass {
+    bottom: -5%;
+}
+
+section {
+    position: relative;
+    background-color: #020912;
+    padding: 30px 100px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+section {
+    color: #fff;
+    
+    font-weight: 300
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 30px 50px;
+    }
+
+    #heading {
+        font-size: 3em;
+        color: white;
+    text-shadow:0px 0px 10pxred,
+                0px 0px 20pxred,
+                0px 0px 40pxred,
+                0px 0px 80pxred;
+    }
+
+    .parallax img#moon {
+        width: 180px;
+    }
+
+    .parallax img#mountain {
+        bottom: 20%;
+    }
+
+    .parallax img#grass {
+        bottom: -10%;
+    }
+
+    section {
+        margin-top: -60px;
+        padding: 30px 50px;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1{
+    background-color: black;
+    color: white;
+    text-shadow:0px 0px 10pred,
+                0px 0px 20pred,
+                0px 0px 40pred,
+                0px 0px 80pred;
+}
+
+#careerList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.career {
+    background-color:black;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 3px red dotted;
+    font-size: 10px;
+}
+
+.career h2 {
+    color: red;
+}
+
+.career button {
+    padding: 10px;
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.career .details {
+    display: none;
+    margin-top: 10px;
+}
+h2{
+    padding-top: 100px;
+    padding-bottom: 10px;
+}
+p{
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+#px{
+    font-size: larger;
+}
+</style>   
+</head>
+
+<body>
+    <header>
+        
+        <div id="logo">Your Dost</div>
+
+        <div class="menu">
+            <a href="Login Page.html">Login</a>
+            <a href="#ledger">Ledger</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <div class="parallax">
+        <h2 id="heading">Your own Career Path Finder</h2>
+        <img src="https://imgs.search.brave.com/kFhRTRVt0mcrtZssCueH0AsmomqRAdX9nKyb32Bt-qk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODBiNTg1YjJlZGJj/ZTI0YzQ3YjI3MGIu/cG5n" alt="" id="moon">
+        <img src="https://purepng.com/public/uploads/large/purepng.com-toronto-city-skylinecitycitiesskylineskyscrapers-251520164696be45t.png" alt="" id="mountain">
+        <img src="grasss.png"  alt="" id="grass">
+    </div>
+    
+
+<section>
+    <h1><center>BTech Career Pathway Guide</center></h1><hr>
+    <p id="px">Explore different engineering fields and career paths suited for a BTech first-year student.</p>
+    Search Field : <input type="text" id="searchInput"  placeholder="Search for an engineering field..." >
+</section>
+   
+    <main>
+        <section id="careerList">
+            <div class="career" data-field="Computer Science">
+                <h2>Computer Science & Engineering</h2>
+                <button onclick="showDetails(this)">View Details</button>
+                <p class="details">
+                    <strong>Core Subjects:</strong> Programming, Data Structures, Algorithms<br>
+                    <strong>Potential Careers:</strong> Software Developer, Data Scientist, AI Engineer<br>
+                    <strong>Key Skills:</strong> Coding, Problem Solving, Machine Learning,Software Develpment,Data Structure And Algorithms<br>
+                    <strong>WEB Developer:</strong>Design and develop website and webapplication<br>
+                    <strong>Game Developer:</strong>Desgin and program and video games<br>
+                    <strong>SALARY</strong> Highest Salary $25+Lpu in India;$150,000+in the Us
+                </p>
+            </div>
+            <div class="career" data-field="Electrical Engineering">
+                <h2>Electrical Engineering</h2>
+                <button onclick="showDetails(this)">View Details</button>
+                <p class="details">
+                    <strong>Core Subjects:</strong> Circuit Theory, Electromagnetics, Power Systems<br>
+                    <strong>Potential Careers:</strong> Electrical Engineer, Power Systems Engineer, R&D Engineer<br>
+                    <strong>Key Skills:</strong> Circuit Analysis, Troubleshooting, MATLAB<br>
+                    <strong>popular Industries:</strong>Energy sector:NTPC,power grid renewable Energy startups<br>
+                    <strong>SALARY EXPECTATIONS:</strong>ENTRY LEVEL:$3-6LPUin india;60,000-$80,000in the usa<br>
+
+                    <srong>EXPERIENCES MANAGERIAL ROLES:</srong> 20+ lpa in india;$130,0000+in the US
+                </p>
+            </div>
+            <div class="career" data-field="Mechanical Engineering">
+                <h2>Mechanical Engineering</h2>
+                <button onclick="showDetails(this)">View Details</button>
+                <p class="details">
+                    <strong>Core Subjects:</strong> Thermodynamics, Fluid Mechanics, Robotics<br>
+                    <strong>Potential Careers:</strong> Mechanical Engineer, Automotive Engineer, Design Engineer<br>
+                    <strong>Key Skills:</strong> CAD Design, Material Science, Mechanics<br>
+                    <strong>Higher studies and certificiations:</strong>
+                    <srong>MASTER PROGRAMS:</srong> Specialize in Robatics,Automotive Engineering Aerospace,or and Thermal sciences<br>
+                    <strong>salary:</strong>senior Roles: $20+lpa in india; and $130,000+in the us
+                </p>
+            </div>
+            <div class="career" data-field="Civil Engineering">
+                <h2>Civil Engineering</h2>
+                <button onclick="showDetails(this)">View Details</button>
+                <p class="details">
+                    <strong>Core Subjects:</strong> Structural Analysis, Geotechnical Engineering, Construction<br>
+                    <strong>Potential Careers:</strong> Civil Engineer, Structural Engineer, Project Manager<br>
+                    <strong>Key Skills:</strong> Project Management, CAD, Surveying
+                    <srong>career opportunities:</srong>construction Manager: plan and supervise construction projects<br>
+                    <strong>ENVIRONMENTAL Engineer:</strong>Adrees Waste Mangament and pollution control<br>
+                    <strong>Salary:</strong>Highest salary $20+ Lpa in india; $120,000+usa
+                </p>
+            </div>
+            <!-- Add more fields as needed -->
+        </section>
+    </main>
+    <section>
+        <hr>
+        <h2 id="about"><center>About</center></h2>
+<p>This project is a user-friendly web application where users can manage their personal finances by logging their income and expenses. It provides insights into spending habits, helps set financial goals, and generates visual reports through interactive charts and graphs. The user can track their budget and receive notifications if they exceed their spending limits.</p> 
+<hr>
+<h2 id="contact"><center>Contact</center></h2>
+
+<p><center>GMAIL:- abc@gmail.com <br> PHONE NO. :- XXXXXXXXXX</center></p>
+    </section>
+
+   
+
+
+
+    <script>
+        const moon = document.getElementById("moon");
+
+window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+
+    if (value <= 500) {
+         heading.style.marginTop = value * 2.5 + 'px';
+         moon.style.right = 20 + value * 0.1 + '%';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to show details of each engineering field
+function showDetails(button) {
+    const details = button.nextElementSibling;
+    if (details.style.display === "block") {
+        details.style.display = "none";
+        button.textContent = "View Details";
+    } else {
+        details.style.display = "block";
+        button.textContent = "Hide Details";
+    }
+}
+
+// Search and filter engineering fields
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', function() {
+    const query = searchInput.value.toLowerCase();
+    const careers = document.querySelectorAll('.career');
+    
+    careers.forEach(career => {
+        const field = career.querySelector('h2').textContent.toLowerCase();
+        if (field.includes(query)) {
+            career.style.display = 'block';
+        } else {
+            career.style.display = 'none';
+        }
+    });
+});
+
+    </script>
+</body>
+
+</html>
